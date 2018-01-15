@@ -1,0 +1,376 @@
+[cloudera@quickstart ~]$ hadoop version
+Hadoop 2.6.0-cdh5.12.0
+Subversion http://github.com/cloudera/hadoop -r dba647c5a8bc5e09b572d76a8d29481c78d1a0dd
+Compiled by jenkins on 2017-06-29T11:32Z
+Compiled with protoc 2.5.0
+From source with checksum 7c45ae7a4592ce5af86bc4598c5b4
+This command was run using /usr/lib/hadoop/hadoop-common-2.6.0-cdh5.12.0.jar
+[cloudera@quickstart ~]$ hadoop -fs ls
+Error: No command named `-fs' was found. Perhaps you meant `hadoop fs'
+[cloudera@quickstart ~]$ hadoop fs -ls
+[cloudera@quickstart ~]$ hadoop fs -ls/
+-ls/: Unknown command
+[cloudera@quickstart ~]$ hadoop fs -ls\
+> cd..
+-lscd..: Unknown command
+[cloudera@quickstart ~]$ hadoop fs -ls /
+Found 6 items
+drwxrwxrwx   - hdfs  supergroup          0 2017-07-19 05:34 /benchmarks
+drwxr-xr-x   - hbase supergroup          0 2018-01-15 12:29 /hbase
+drwxr-xr-x   - solr  solr                0 2017-07-19 05:37 /solr
+drwxrwxrwt   - hdfs  supergroup          0 2018-01-13 16:57 /tmp
+drwxr-xr-x   - hdfs  supergroup          0 2017-07-19 05:36 /user
+drwxr-xr-x   - hdfs  supergroup          0 2017-07-19 05:36 /var
+[cloudera@quickstart ~]$ hadoop fs mkdir /lopa_proj2
+mkdir: Unknown command
+Did you mean -mkdir?  This command begins with a dash.
+[cloudera@quickstart ~]$ hadoop fs mkdir/bigdata
+mkdir/bigdata: Unknown command
+[cloudera@quickstart ~]$ hadoop fs -mkdir/bigdata
+-mkdir/bigdata: Unknown command
+[cloudera@quickstart ~]$ hadoop fs -mkdir /bigdata
+[cloudera@quickstart ~]$ hadoop fs -ls /
+Found 7 items
+drwxrwxrwx   - hdfs     supergroup          0 2017-07-19 05:34 /benchmarks
+drwxr-xr-x   - cloudera supergroup          0 2018-01-15 12:38 /bigdata
+drwxr-xr-x   - hbase    supergroup          0 2018-01-15 12:29 /hbase
+drwxr-xr-x   - solr     solr                0 2017-07-19 05:37 /solr
+drwxrwxrwt   - hdfs     supergroup          0 2018-01-13 16:57 /tmp
+drwxr-xr-x   - hdfs     supergroup          0 2017-07-19 05:36 /user
+drwxr-xr-x   - hdfs     supergroup          0 2017-07-19 05:36 /var
+[cloudera@quickstart ~]$ cd /user
+bash: cd: /user: No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -cd /user
+-cd: Unknown command
+[cloudera@quickstart ~]$ hadoop fs -du -s /user/cloudera/HdfsHello
+du: `/user/cloudera/HdfsHello': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -du -s /user/cloudera/HdfsHello
+du: `/user/cloudera/HdfsHello': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -du -s /user/cloudera
+0  0  /user/cloudera
+[cloudera@quickstart ~]$ hadoop fs -touchz /user/cloudera/sampledata
+[cloudera@quickstart ~]$ hadoop fs -du -s /user/cloudera/sampledata
+0  0  /user/cloudera/sampledata
+[cloudera@quickstart ~]$ hadoop fs -cat /user/cloudera/HdfsHello
+welcocat: `/user/cloudera/HdfsHello': No such file or directory
+me [cloudera@quickstart ~]$ pwd
+/home/cloudera
+[cloudera@quickstart ~]$ cat > hadooptraining
+practise makes man perfect 
+learn hadoop for Bigdata
+[cloudera@quickstart ~]$ ls
+cloudera-manager  Desktop    Downloads  enterprise-deployment.json  hadooptraining  lib    parcels   Public     Videos
+cm_api.py         Documents  eclipse    express-deployment.json     kerberos        Music  Pictures  Templates  workspace
+[cloudera@quickstart ~]$ ls -lrt
+total 192
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 workspace
+-rwxrwxr-x 1 cloudera cloudera  4228 Jul 19 12:16 parcels
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 lib
+-rwxrwxr-x 1 cloudera cloudera  5007 Jul 19 12:16 kerberos
+-rw-rw-r-- 1 cloudera cloudera 50515 Jul 19 12:16 express-deployment.json
+-rw-rw-r-- 1 cloudera cloudera 53655 Jul 19 12:16 enterprise-deployment.json
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 Documents
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 Desktop
+-rwxrwxr-x 1 cloudera cloudera  9964 Jul 19 12:16 cm_api.py
+-rwxrwxr-x 1 cloudera cloudera  5387 Jul 19 12:16 cloudera-manager
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Templates
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Downloads
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Videos
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Public
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Pictures
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Music
+drwxrwsr-x 9 cloudera cloudera  4096 Jan 14 16:08 eclipse
+-rw-rw-r-- 1 cloudera cloudera    53 Jan 15 12:53 hadooptraining
+[cloudera@quickstart ~]$ cat hadooptraining
+practise makes man perfect 
+learn hadoop for Bigdata
+[cloudera@quickstart ~]$ cat >> hadooptraining
+Thank You BigdataTrunk
+This is New Data
+[cloudera@quickstart ~]$ cat hadooptraining
+practise makes man perfect 
+learn hadoop for Bigdata
+Thank You BigdataTrunk
+This is New Data
+[cloudera@quickstart ~]$ hadoop fs -text /user/cloudera/HdfsHello
+text: `/user/cloudera/HdfsHello': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -touchz /user/cloudera/HdfsHello
+[cloudera@quickstart ~]$ hadoop fs - text /user/cloudera/hdfshello
+text: Unknown command
+Did you mean -text?  This command begins with a dash.
+[cloudera@quickstart ~]$ hadoop fs -text /user/cloudera/hdfs*
+text: `/user/cloudera/hdfs*': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -text /user/cloudera/Hdfs*
+[cloudera@quickstart ~]$ hadoop fs -copyFromLocal /home/cloudera/hadooptraining /user/cloudera
+[cloudera@quickstart ~]$ hadoop fs -ls /user/cloudera
+Found 3 items
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:57 /user/cloudera/HdfsHello
+-rw-r--r--   1 cloudera cloudera         93 2018-01-15 13:01 /user/cloudera/hadooptraining
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:49 /user/cloudera/sampledata
+[cloudera@quickstart ~]$ ls
+cloudera-manager  Desktop    Downloads  enterprise-deployment.json  hadooptraining  lib    parcels   Public     Videos
+cm_api.py         Documents  eclipse    express-deployment.json     kerberos        Music  Pictures  Templates  workspace
+[cloudera@quickstart ~]$ cat > HdfsHello
+Welcome to Bigdata
+[cloudera@quickstart ~]$ hadoop fs -copyFromLocal /user/cloudera/HdfsHello /user/cloudera/HdfsHellp
+copyFromLocal: `/user/cloudera/HdfsHello': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -copyFromLocal /user/cloudera/HdfsHello /user/cloudera/HdfsHello
+copyFromLocal: `/user/cloudera/HdfsHello': File exists
+[cloudera@quickstart ~]$ hadoop fs -copyToLocal HdfsHello /user/Cloudera
+copyToLocal: `/user/Cloudera': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -copyToLocal HdfsHello /user/cloudera
+copyToLocal: `/user/cloudera': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -ls /
+Found 7 items
+drwxrwxrwx   - hdfs     supergroup          0 2017-07-19 05:34 /benchmarks
+drwxr-xr-x   - cloudera supergroup          0 2018-01-15 12:38 /bigdata
+drwxr-xr-x   - hbase    supergroup          0 2018-01-15 12:29 /hbase
+drwxr-xr-x   - solr     solr                0 2017-07-19 05:37 /solr
+drwxrwxrwt   - hdfs     supergroup          0 2018-01-13 16:57 /tmp
+drwxr-xr-x   - hdfs     supergroup          0 2017-07-19 05:36 /user
+drwxr-xr-x   - hdfs     supergroup          0 2017-07-19 05:36 /var
+[cloudera@quickstart ~]$ ^C
+[cloudera@quickstart ~]$ hadoop fs -ls /user/cloudera
+Found 3 items
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:57 /user/cloudera/HdfsHello
+-rw-r--r--   1 cloudera cloudera         93 2018-01-15 13:01 /user/cloudera/hadooptraining
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:49 /user/cloudera/sampledata
+[cloudera@quickstart ~]$ ls -lrt
+total 196
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 workspace
+-rwxrwxr-x 1 cloudera cloudera  4228 Jul 19 12:16 parcels
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 lib
+-rwxrwxr-x 1 cloudera cloudera  5007 Jul 19 12:16 kerberos
+-rw-rw-r-- 1 cloudera cloudera 50515 Jul 19 12:16 express-deployment.json
+-rw-rw-r-- 1 cloudera cloudera 53655 Jul 19 12:16 enterprise-deployment.json
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 Documents
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 Desktop
+-rwxrwxr-x 1 cloudera cloudera  9964 Jul 19 12:16 cm_api.py
+-rwxrwxr-x 1 cloudera cloudera  5387 Jul 19 12:16 cloudera-manager
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Templates
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Downloads
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Videos
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Public
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Pictures
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Music
+drwxrwsr-x 9 cloudera cloudera  4096 Jan 14 16:08 eclipse
+-rw-rw-r-- 1 cloudera cloudera    93 Jan 15 12:54 hadooptraining
+-rw-rw-r-- 1 cloudera cloudera    19 Jan 15 13:03 HdfsHello
+[cloudera@quickstart ~]$ ^C
+[cloudera@quickstart ~]$ rm HdfsHello
+rm: remove regular file `HdfsHello'? y
+[cloudera@quickstart ~]$ ls -lrt
+total 192
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 workspace
+-rwxrwxr-x 1 cloudera cloudera  4228 Jul 19 12:16 parcels
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 lib
+-rwxrwxr-x 1 cloudera cloudera  5007 Jul 19 12:16 kerberos
+-rw-rw-r-- 1 cloudera cloudera 50515 Jul 19 12:16 express-deployment.json
+-rw-rw-r-- 1 cloudera cloudera 53655 Jul 19 12:16 enterprise-deployment.json
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 Documents
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 Desktop
+-rwxrwxr-x 1 cloudera cloudera  9964 Jul 19 12:16 cm_api.py
+-rwxrwxr-x 1 cloudera cloudera  5387 Jul 19 12:16 cloudera-manager
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Templates
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Downloads
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Videos
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Public
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Pictures
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Music
+drwxrwsr-x 9 cloudera cloudera  4096 Jan 14 16:08 eclipse
+-rw-rw-r-- 1 cloudera cloudera    93 Jan 15 12:54 hadooptraining
+[cloudera@quickstart ~]$ hadoop fs -copyToLocal HdfsHello /home/cloudera
+[cloudera@quickstart ~]$ ls -lrt
+total 192
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 workspace
+-rwxrwxr-x 1 cloudera cloudera  4228 Jul 19 12:16 parcels
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 lib
+-rwxrwxr-x 1 cloudera cloudera  5007 Jul 19 12:16 kerberos
+-rw-rw-r-- 1 cloudera cloudera 50515 Jul 19 12:16 express-deployment.json
+-rw-rw-r-- 1 cloudera cloudera 53655 Jul 19 12:16 enterprise-deployment.json
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 Documents
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 Desktop
+-rwxrwxr-x 1 cloudera cloudera  9964 Jul 19 12:16 cm_api.py
+-rwxrwxr-x 1 cloudera cloudera  5387 Jul 19 12:16 cloudera-manager
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Templates
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Downloads
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Videos
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Public
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Pictures
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Music
+drwxrwsr-x 9 cloudera cloudera  4096 Jan 14 16:08 eclipse
+-rw-rw-r-- 1 cloudera cloudera    93 Jan 15 12:54 hadooptraining
+-rw-r--r-- 1 cloudera cloudera     0 Jan 15 13:09 HdfsHello
+[cloudera@quickstart ~]$ hadoop fs -put /user/cloudera
+put: `/user/cloudera': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -put hadoop /user/cloudera
+put: `hadoop': No such file or directory
+[cloudera@quickstart ~]$ madir hadoop
+bash: madir: command not found
+[cloudera@quickstart ~]$ mkdir hadoop
+[cloudera@quickstart ~]$ ls -lrt
+total 196
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 workspace
+-rwxrwxr-x 1 cloudera cloudera  4228 Jul 19 12:16 parcels
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 lib
+-rwxrwxr-x 1 cloudera cloudera  5007 Jul 19 12:16 kerberos
+-rw-rw-r-- 1 cloudera cloudera 50515 Jul 19 12:16 express-deployment.json
+-rw-rw-r-- 1 cloudera cloudera 53655 Jul 19 12:16 enterprise-deployment.json
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 Documents
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 Desktop
+-rwxrwxr-x 1 cloudera cloudera  9964 Jul 19 12:16 cm_api.py
+-rwxrwxr-x 1 cloudera cloudera  5387 Jul 19 12:16 cloudera-manager
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Templates
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Downloads
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Videos
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Public
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Pictures
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Music
+drwxrwsr-x 9 cloudera cloudera  4096 Jan 14 16:08 eclipse
+-rw-rw-r-- 1 cloudera cloudera    93 Jan 15 12:54 hadooptraining
+-rw-r--r-- 1 cloudera cloudera     0 Jan 15 13:09 HdfsHello
+drwxrwxr-x 2 cloudera cloudera  4096 Jan 15 13:12 hadoop
+[cloudera@quickstart ~]$ hadoop fs -put hadoop /user/cloudera
+[cloudera@quickstart ~]$ hadoop fs -ls /user/cloudera
+Found 4 items
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:57 /user/cloudera/HdfsHello
+drwxr-xr-x   - cloudera cloudera          0 2018-01-15 13:13 /user/cloudera/hadoop
+-rw-r--r--   1 cloudera cloudera         93 2018-01-15 13:01 /user/cloudera/hadooptraining
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:49 /user/cloudera/sampledata
+[cloudera@quickstart ~]$ hadoop fs -get bigdata /home/cloudera
+get: `bigdata': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -touchz /user/cloudera/bigdata
+[cloudera@quickstart ~]$ hadoop fs -get bigdata /home/cloudera
+[cloudera@quickstart ~]$ ls -lrt
+total 196
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 workspace
+-rwxrwxr-x 1 cloudera cloudera  4228 Jul 19 12:16 parcels
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 lib
+-rwxrwxr-x 1 cloudera cloudera  5007 Jul 19 12:16 kerberos
+-rw-rw-r-- 1 cloudera cloudera 50515 Jul 19 12:16 express-deployment.json
+-rw-rw-r-- 1 cloudera cloudera 53655 Jul 19 12:16 enterprise-deployment.json
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 Documents
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 Desktop
+-rwxrwxr-x 1 cloudera cloudera  9964 Jul 19 12:16 cm_api.py
+-rwxrwxr-x 1 cloudera cloudera  5387 Jul 19 12:16 cloudera-manager
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Templates
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Downloads
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Videos
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Public
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Pictures
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Music
+drwxrwsr-x 9 cloudera cloudera  4096 Jan 14 16:08 eclipse
+-rw-rw-r-- 1 cloudera cloudera    93 Jan 15 12:54 hadooptraining
+-rw-r--r-- 1 cloudera cloudera     0 Jan 15 13:09 HdfsHello
+drwxrwxr-x 2 cloudera cloudera  4096 Jan 15 13:12 hadoop
+-rw-r--r-- 1 cloudera cloudera     0 Jan 15 13:16 bigdata
+[cloudera@quickstart ~]$ hadoop fs -count /user/cloudera
+           2            4                 93 /user/cloudera
+[cloudera@quickstart ~]$ hadoop fs -ls /user/cloudera
+Found 5 items
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:57 /user/cloudera/HdfsHello
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 13:16 /user/cloudera/bigdata
+drwxr-xr-x   - cloudera cloudera          0 2018-01-15 13:13 /user/cloudera/hadoop
+-rw-r--r--   1 cloudera cloudera         93 2018-01-15 13:01 /user/cloudera/hadooptraining
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:49 /user/cloudera/sampledata
+[cloudera@quickstart ~]$ hadoop fs -ls /user/cloudera
+Found 5 items
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:57 /user/cloudera/HdfsHello
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 13:16 /user/cloudera/bigdata
+drwxr-xr-x   - cloudera cloudera          0 2018-01-15 13:13 /user/cloudera/hadoop
+-rw-r--r--   1 cloudera cloudera         93 2018-01-15 13:01 /user/cloudera/hadooptraining
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:49 /user/cloudera/sampledata
+[cloudera@quickstart ~]$ hadoop fs -count /user/cloudera
+           2            4                 93 /user/cloudera
+[cloudera@quickstart ~]$ hadoop fs -rm /user/cloudera/sampledata
+Deleted /user/cloudera/sampledata
+[cloudera@quickstart ~]$ ^C
+[cloudera@quickstart ~]$ hadoop fs -count /user/cloudera
+           2            3                 93 /user/cloudera
+[cloudera@quickstart ~]$ ^C
+[cloudera@quickstart ~]$ hadoop fs -drm /user/cloudera/bigdata
+-drm: Unknown command
+[cloudera@quickstart ~]$ hadoop fs -rmr /user/cloudera/bigdata
+rmr: DEPRECATED: Please use 'rm -r' instead.
+Deleted /user/cloudera/bigdata
+[cloudera@quickstart ~]$ hadoop fs -rmr /user/cloudera/hadoop
+rmr: DEPRECATED: Please use 'rm -r' instead.
+Deleted /user/cloudera/hadoop
+[cloudera@quickstart ~]$ rm bigdata
+rm: remove regular empty file `bigdata'? y
+[cloudera@quickstart ~]$ mkdir bigdata
+[cloudera@quickstart ~]$ hadoop fs -copyFromLocal /home/cloudera/hadoop /user/cloudera
+[cloudera@quickstart ~]$ hadoop fs -ls /user/cloudera
+Found 3 items
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:57 /user/cloudera/HdfsHello
+drwxr-xr-x   - cloudera cloudera          0 2018-01-15 13:26 /user/cloudera/hadoop
+-rw-r--r--   1 cloudera cloudera         93 2018-01-15 13:01 /user/cloudera/hadooptraining
+[cloudera@quickstart ~]$ hadoop fs -cat > HdfsHello
+-cat: Not enough arguments: expected 1 but got 0
+Usage: hadoop fs [generic options] -cat [-ignoreCrc] <src> ...
+[cloudera@quickstart ~]$ hadoop fs -cat >> /user/cloudera/HdfsHello
+bash: /user/cloudera/HdfsHello: No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -cat >> /user/cloudera/HdfsHello
+bash: /user/cloudera/HdfsHello: No such file or directory
+[cloudera@quickstart ~]$ hadoop fs - cat >> /user/cloudera/HdfsHello
+bash: /user/cloudera/HdfsHello: No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -ls /user/cloudera/HdfsHello
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:57 /user/cloudera/HdfsHello
+[cloudera@quickstart ~]$ hadoop fs -help cat
+-cat [-ignoreCrc] <src> ... :
+  Fetch all files that match the file pattern <src> and display their content on
+  stdout.
+[cloudera@quickstart ~]$ hadoop fs -ls /user
+Found 8 items
+drwxr-xr-x   - cloudera cloudera            0 2018-01-15 13:26 /user/cloudera
+drwxr-xr-x   - mapred   hadoop              0 2017-07-19 05:34 /user/history
+drwxrwxrwx   - hive     supergroup          0 2017-07-19 05:36 /user/hive
+drwxrwxrwx   - hue      supergroup          0 2017-07-19 05:35 /user/hue
+drwxrwxrwx   - jenkins  supergroup          0 2017-07-19 05:35 /user/jenkins
+drwxrwxrwx   - oozie    supergroup          0 2017-07-19 05:35 /user/oozie
+drwxrwxrwx   - root     supergroup          0 2017-07-19 05:35 /user/root
+drwxr-xr-x   - hdfs     supergroup          0 2017-07-19 05:36 /user/spark
+[cloudera@quickstart ~]$ hadoop fs -ls /user/cloudera
+Found 3 items
+-rw-r--r--   1 cloudera cloudera          0 2018-01-15 12:57 /user/cloudera/HdfsHello
+drwxr-xr-x   - cloudera cloudera          0 2018-01-15 13:26 /user/cloudera/hadoop
+-rw-r--r--   1 cloudera cloudera         93 2018-01-15 13:01 /user/cloudera/hadooptraining
+[cloudera@quickstart ~]$ 
+[cloudera@quickstart ~]$ 
+[cloudera@quickstart ~]$ cat > HdfsHello
+Welcome to BigData
+[cloudera@quickstart ~]$ ls -lrt
+total 204
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 workspace
+-rwxrwxr-x 1 cloudera cloudera  4228 Jul 19 12:16 parcels
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 lib
+-rwxrwxr-x 1 cloudera cloudera  5007 Jul 19 12:16 kerberos
+-rw-rw-r-- 1 cloudera cloudera 50515 Jul 19 12:16 express-deployment.json
+-rw-rw-r-- 1 cloudera cloudera 53655 Jul 19 12:16 enterprise-deployment.json
+drwxrwxr-x 4 cloudera cloudera  4096 Jul 19 12:16 Documents
+drwxrwxr-x 2 cloudera cloudera  4096 Jul 19 12:16 Desktop
+-rwxrwxr-x 1 cloudera cloudera  9964 Jul 19 12:16 cm_api.py
+-rwxrwxr-x 1 cloudera cloudera  5387 Jul 19 12:16 cloudera-manager
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Templates
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Downloads
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Videos
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Public
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Pictures
+drwxr-xr-x 2 cloudera cloudera  4096 Jan 13 16:57 Music
+drwxrwsr-x 9 cloudera cloudera  4096 Jan 14 16:08 eclipse
+-rw-rw-r-- 1 cloudera cloudera    93 Jan 15 12:54 hadooptraining
+drwxrwxr-x 2 cloudera cloudera  4096 Jan 15 13:12 hadoop
+drwxrwxr-x 2 cloudera cloudera  4096 Jan 15 13:25 bigdata
+-rw-r--r-- 1 cloudera cloudera    19 Jan 15 13:39 HdfsHello
+[cloudera@quickstart ~]$ hadoop fs -rm /user/cloudera/HdfsHello
+Deleted /user/cloudera/HdfsHello
+[cloudera@quickstart ~]$ hadoop fs -put /home/cloudera/HdfsHello /user/cloudera
+[cloudera@quickstart ~]$ hadoop fs -ls /user/cloudera
+Found 3 items
+-rw-r--r--   1 cloudera cloudera         19 2018-01-15 13:40 /user/cloudera/HdfsHello
+drwxr-xr-x   - cloudera cloudera          0 2018-01-15 13:26 /user/cloudera/hadoop
+-rw-r--r--   1 cloudera cloudera         93 2018-01-15 13:01 /user/cloudera/hadooptraining
+[cloudera@quickstart ~]$ hadoop fs -cat >> /user/cloudera/HdfsHello
+bash: /user/cloudera/HdfsHello: No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -cat /user/cloudera/HdfsHello
+Welcome to BigData
