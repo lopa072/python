@@ -1,0 +1,222 @@
+[cloudera@quickstart ~]$ sqoop eval --connect jdbc:mysql://localhost:3306/retail_db --username retail_dba --password cloudera --query "select * from departments"
+Warning: /usr/lib/sqoop/../accumulo does not exist! Accumulo imports will fail.
+Please set $ACCUMULO_HOME to the root of your Accumulo installation.
+18/01/21 15:14:46 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.12.0
+18/01/21 15:14:46 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
+18/01/21 15:14:47 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
+--------------------------------------
+| department_id | department_name      | 
+--------------------------------------
+| 2           | Fitness              | 
+| 3           | Footwear             | 
+| 4           | Apparel              | 
+| 5           | Golf                 | 
+| 6           | Outdoors             | 
+| 7           | Fan Shop             | 
+| 21          | NewVal               | 
+| 22          | NewVal               | 
+--------------------------------------
+[cloudera@quickstart ~]$ sqoop import --connect jdbc:mysql://localhost:3306/retail_db --username retail_dba --password cloudera --table departments --check-column department_id --incremental append --last-value 7
+Warning: /usr/lib/sqoop/../accumulo does not exist! Accumulo imports will fail.
+Please set $ACCUMULO_HOME to the root of your Accumulo installation.
+18/01/21 15:17:28 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.12.0
+18/01/21 15:17:28 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
+18/01/21 15:17:28 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
+18/01/21 15:17:28 INFO tool.CodeGenTool: Beginning code generation
+18/01/21 15:17:29 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `departments` AS t LIMIT 1
+18/01/21 15:17:29 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `departments` AS t LIMIT 1
+18/01/21 15:17:29 INFO orm.CompilationManager: HADOOP_MAPRED_HOME is /usr/lib/hadoop-mapreduce
+Note: /tmp/sqoop-cloudera/compile/528051560abe45689267376bc8c79fd5/departments.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+18/01/21 15:17:32 INFO orm.CompilationManager: Writing jar file: /tmp/sqoop-cloudera/compile/528051560abe45689267376bc8c79fd5/departments.jar
+18/01/21 15:17:34 INFO tool.ImportTool: Maximal id query for free form incremental import: SELECT MAX(`department_id`) FROM `departments`
+18/01/21 15:17:34 INFO tool.ImportTool: Incremental import based on column `department_id`
+18/01/21 15:17:34 INFO tool.ImportTool: Lower bound value: 7
+18/01/21 15:17:34 INFO tool.ImportTool: Upper bound value: 22
+18/01/21 15:17:34 WARN manager.MySQLManager: It looks like you are importing from mysql.
+18/01/21 15:17:34 WARN manager.MySQLManager: This transfer can be faster! Use the --direct
+18/01/21 15:17:34 WARN manager.MySQLManager: option to exercise a MySQL-specific fast path.
+18/01/21 15:17:34 INFO manager.MySQLManager: Setting zero DATETIME behavior to convertToNull (mysql)
+18/01/21 15:17:34 INFO mapreduce.ImportJobBase: Beginning import of departments
+18/01/21 15:17:34 INFO Configuration.deprecation: mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+18/01/21 15:17:34 INFO Configuration.deprecation: mapred.jar is deprecated. Instead, use mapreduce.job.jar
+18/01/21 15:17:34 INFO Configuration.deprecation: mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+18/01/21 15:17:35 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:36 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:37 INFO db.DBInputFormat: Using read commited transaction isolation
+18/01/21 15:17:37 INFO db.DataDrivenDBInputFormat: BoundingValsQuery: SELECT MIN(`department_id`), MAX(`department_id`) FROM `departments` WHERE ( `department_id` > 7 AND `department_id` <= 22 )
+18/01/21 15:17:37 INFO db.IntegerSplitter: Split size: 0; Num splits: 4 from: 21 to: 22
+18/01/21 15:17:37 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/21 15:17:37 INFO mapreduce.JobSubmitter: number of splits:2
+18/01/21 15:17:37 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1516563730194_0007
+18/01/21 15:17:37 INFO impl.YarnClientImpl: Submitted application application_1516563730194_0007
+18/01/21 15:17:38 INFO mapreduce.Job: The url to track the job: http://quickstart.cloudera:8088/proxy/application_1516563730194_0007/
+18/01/21 15:17:38 INFO mapreduce.Job: Running job: job_1516563730194_0007
+18/01/21 15:17:48 INFO mapreduce.Job: Job job_1516563730194_0007 running in uber mode : false
+18/01/21 15:17:48 INFO mapreduce.Job:  map 0% reduce 0%
+18/01/21 15:18:00 INFO mapreduce.Job:  map 50% reduce 0%
+18/01/21 15:18:01 INFO mapreduce.Job:  map 100% reduce 0%
+18/01/21 15:18:01 INFO mapreduce.Job: Job job_1516563730194_0007 completed successfully
+18/01/21 15:18:01 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=304318
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=245
+		HDFS: Number of bytes written=20
+		HDFS: Number of read operations=8
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=4
+	Job Counters 
+		Launched map tasks=2
+		Other local map tasks=2
+		Total time spent by all maps in occupied slots (ms)=20588
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=20588
+		Total vcore-milliseconds taken by all map tasks=20588
+		Total megabyte-milliseconds taken by all map tasks=21082112
+	Map-Reduce Framework
+		Map input records=2
+		Map output records=2
+		Input split bytes=245
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=274
+		CPU time spent (ms)=1800
+		Physical memory (bytes) snapshot=262451200
+		Virtual memory (bytes) snapshot=3020357632
+		Total committed heap usage (bytes)=121503744
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=20
+18/01/21 15:18:01 INFO mapreduce.ImportJobBase: Transferred 20 bytes in 27.1581 seconds (0.7364 bytes/sec)
+18/01/21 15:18:01 INFO mapreduce.ImportJobBase: Retrieved 2 records.
+18/01/21 15:18:01 INFO util.AppendUtils: Appending to directory departments
+18/01/21 15:18:01 INFO util.AppendUtils: Using found partition 4
+18/01/21 15:18:01 INFO tool.ImportTool: Incremental import complete! To run another incremental import of all data following this import, supply the following arguments:
+18/01/21 15:18:01 INFO tool.ImportTool:  --incremental append
+18/01/21 15:18:01 INFO tool.ImportTool:   --check-column department_id
+18/01/21 15:18:01 INFO tool.ImportTool:   --last-value 22
+18/01/21 15:18:01 INFO tool.ImportTool: (Consider saving this with 'sqoop job --create')
