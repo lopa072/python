@@ -1,0 +1,512 @@
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/commons-pool-1.5.4.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hbase-common.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/commons-compiler-2.7.6.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/super-csv-2.2.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/commons-el-1.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/pentaho-aggdesigner-algorithm-5.1.5-jhyde.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/findbugs-annotations-1.3.9-1.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/antlr-runtime-3.4.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-shims-0.23-1.1.0-cdh5.12.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-shims-common-1.1.0-cdh5.12.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/calcite-core-1.0.0-incubating.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/eigenbase-properties-1.1.4.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/oro-2.0.8.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/antlr-2.7.7.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/jackson-xc-1.9.2.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/libthrift-0.9.3.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/commons-beanutils-1.9.2.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-hwi-1.1.0-cdh5.12.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-contrib-1.1.0-cdh5.12.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/jetty-all-server-7.6.0.v20120127.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/jersey-server-1.14.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/commons-io-2.4.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/datanucleus-api-jdo-3.2.6.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-serde-1.1.0-cdh5.12.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/jasper-runtime-5.5.23.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hbase-client.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-shims.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/groovy-all-2.4.4.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/maven-scm-provider-svn-commons-1.4.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/commons-configuration-1.6.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/maven-scm-provider-svnexe-1.4.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-jdbc-1.1.0-cdh5.12.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-cli-1.1.0-cdh5.12.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-accumulo-handler-1.1.0-cdh5.12.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-hwi.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-shims-0.23.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-shims-scheduler.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/high-scale-lib-1.1.1.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-beeline.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-shims-1.1.0-cdh5.12.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/geronimo-annotation_1.0_spec-1.1.1.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/htrace-core.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/accumulo-start-1.6.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/accumulo-trace-1.6.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/asm-tree-3.1.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-contrib.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/zookeeper.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/tempus-fugit-1.1.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/jline-2.12.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-cli.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/calcite-avatica-1.0.0-incubating.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-jdbc.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-beeline-1.1.0-cdh5.12.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/accumulo-core-1.6.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/commons-dbcp-1.4.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/joda-time-1.6.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-accumulo-handler.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/jsp-api-2.1.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/paranamer-2.3.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/snappy-java-1.0.4.1.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/jackson-annotations-2.2.2.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/commons-beanutils-core-1.8.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/logredactor-1.0.3.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/httpclient-4.2.5.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/ant-1.9.1.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/commons-collections-3.2.2.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-metastore-1.1.0-cdh5.12.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/apache-log4j-extras-1.2.17.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hbase-hadoop-compat.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/commons-vfs2-2.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/asm-commons-3.1.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-service-1.1.0-cdh5.12.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/httpcore-4.2.5.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-hbase-handler.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/gson-2.2.4.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-common.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/jpam-1.1.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/jetty-all-7.6.0.v20120127.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/commons-lang-2.6.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/hive-metastore.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/jsr305-3.0.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/curator-client-2.6.0.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/datanucleus-core-3.2.10.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding to job classpath: file:/usr/lib/hive/lib/stringtemplate-3.2.1.jar
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Adding jar files under /usr/lib/hive-hcatalog/share/hcatalog/storage-handlers to distributed cache (recursively)
+18/01/22 16:51:53 WARN hcat.SqoopHCatUtilities: No files under /usr/lib/hive-hcatalog/share/hcatalog/storage-handlers to add to distributed cache for hcatalog job
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Configuring HCatalog for export job
+18/01/22 16:51:53 INFO hcat.SqoopHCatUtilities: Ignoring configuration request for HCatalog info
+18/01/22 16:51:54 INFO Configuration.deprecation: mapred.reduce.tasks.speculative.execution is deprecated. Instead, use mapreduce.reduce.speculative
+18/01/22 16:51:54 INFO Configuration.deprecation: mapred.map.tasks.speculative.execution is deprecated. Instead, use mapreduce.map.speculative
+18/01/22 16:51:54 INFO Configuration.deprecation: mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+18/01/22 16:51:54 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+18/01/22 16:51:55 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:55 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:56 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:56 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:56 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeInternal(DFSOutputStream.java:920)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:916)
+18/01/22 16:51:56 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:56 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:56 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:56 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:56 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:57 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:57 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:57 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:57 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeInternal(DFSOutputStream.java:920)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:916)
+18/01/22 16:51:57 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:57 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:57 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:58 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:58 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:58 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:58 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:58 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:58 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:59 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:59 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:51:59 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:00 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:00 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:00 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:00 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:01 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:02 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:02 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:02 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:02 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:02 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:03 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:03 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:03 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:03 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:03 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:04 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:04 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:04 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:04 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:04 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:952)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:690)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:879)
+18/01/22 16:52:05 INFO Configuration.deprecation: mapred.input.dir is deprecated. Instead, use mapreduce.input.fileinputformat.inputdir
+18/01/22 16:52:06 INFO mapred.FileInputFormat: Total input paths to process : 1
+18/01/22 16:52:06 INFO mapreduce.JobSubmitter: number of splits:1
+18/01/22 16:52:06 INFO Configuration.deprecation: mapred.map.tasks.speculative.execution is deprecated. Instead, use mapreduce.map.speculative
+18/01/22 16:52:06 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1516660319068_0010
+18/01/22 16:52:08 INFO impl.YarnClientImpl: Submitted application application_1516660319068_0010
+18/01/22 16:52:08 INFO mapreduce.Job: The url to track the job: http://quickstart.cloudera:8088/proxy/application_1516660319068_0010/
+18/01/22 16:52:08 INFO mapreduce.Job: Running job: job_1516660319068_0010
+18/01/22 16:52:37 INFO mapreduce.Job: Job job_1516660319068_0010 running in uber mode : false
+18/01/22 16:52:37 INFO mapreduce.Job:  map 0% reduce 0%
+18/01/22 16:52:58 INFO mapreduce.Job:  map 100% reduce 0%
+18/01/22 16:52:58 INFO mapreduce.Job: Job job_1516660319068_0010 completed successfully
+18/01/22 16:52:58 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=320349
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8832
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=2
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=0
+	Job Counters 
+		Launched map tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=15995
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=15995
+		Total vcore-milliseconds taken by all map tasks=15995
+		Total megabyte-milliseconds taken by all map tasks=16378880
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=4
+		Input split bytes=8612
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=182
+		CPU time spent (ms)=1710
+		Physical memory (bytes) snapshot=118009856
+		Virtual memory (bytes) snapshot=1520001024
+		Total committed heap usage (bytes)=60751872
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=0
+18/01/22 16:52:58 INFO mapreduce.ExportJobBase: Transferred 8.625 KB in 64.7327 seconds (136.4381 bytes/sec)
+18/01/22 16:52:58 INFO mapreduce.ExportJobBase: Exported 4 records.
+18/01/22 16:52:58 INFO hive.metastore: Closed a connection to metastore, current connections: 0
+[cloudera@quickstart ~]$ 
