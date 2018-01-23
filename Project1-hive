@@ -1,0 +1,269 @@
+[cloudera@quickstart ~]$ hive
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j.properties
+WARNING: Hive CLI is deprecated and migration to Beeline is recommended.
+hive> create schema hiveoriginal_sc location '/hivedatabase/';
+OK
+Time taken: 1.833 seconds
+hive> use hiveoriginal_sc;
+OK
+Time taken: 0.035 seconds
+hive> create external table hive_account(account_id int,account_name string,account_phone string)
+    > row format delimited
+    > fields terminated by '\t'
+    > location '/hivedatabase/account/';
+OK
+Time taken: 1.11 seconds
+hive> create external table hive_contact(account_id int,contact_id int,first_name string,last_name string,phone string,email string)
+    > row format delimited
+    > fields terminated by '\t'
+    > location '/hivedatabase/contact/'
+    > ;
+OK
+Time taken: 0.063 seconds
+hive> describe hive_contact;
+OK
+account_id          	int                 	                    
+contact_id          	int                 	                    
+first_name          	string              	                    
+last_name           	string              	                    
+phone               	string              	                    
+email               	string              	                    
+Time taken: 0.684 seconds, Fetched: 6 row(s)
+hive> select * from hive_contact;
+OK
+Time taken: 0.746 seconds
+hive> select * from hive_account;
+OK
+1	Small Company LLC	415-111-2222
+2	Medium Company LLC	408-111-2222
+3	Large Company LLC	510-111-2222
+4	Very Large Company LLC	650-111-2222
+Time taken: 0.096 seconds, Fetched: 4 row(s)
+hive> select * from hive_contact;
+OK
+11	1	John	Smith	415-222-3333	johns@gmail.comr
+12	2	Bob	Smith	408-222-3334	Bobs@gmail.comr
+13	3	Mark	Taylor	510-222-3335	Markt@gmail.comr
+14	4	Pat	Taylor	650-222-3336	Patt@gmail.comr
+Time taken: 0.072 seconds, Fetched: 4 row(s)
+hive> 
+    > 
+    > ADD JAR /home/cloudera/workspce/udfnum.jar;
+/home/cloudera/workspce/udfnum.jar does not exist
+Query returned non-zero code: 1, cause: /home/cloudera/workspce/udfnum.jar does not exist
+hive> ADD JAR /home/cloudera/workspace/udfnum.jar;
+Added [/home/cloudera/workspace/udfnum.jar] to class path
+Added resources: [/home/cloudera/workspace/udfnum.jar]
+hive> CREATE TEMPORARY FUNCTION encodnum AS 'MaskNum';
+OK
+Time taken: 5.091 seconds
+hive> insert overwrite table hive_account select account_id,account_name,encodnum(account_phone) from hive_account;
+Query ID = cloudera_20180122155353_53fac235-6416-49fd-a80d-3b652c03a966
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1516660319068_0005, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1516660319068_0005/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1516660319068_0005
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2018-01-22 15:55:07,131 Stage-1 map = 0%,  reduce = 0%
+2018-01-22 15:55:22,854 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.22 sec
+MapReduce Total cumulative CPU time: 2 seconds 220 msec
+Ended Job = job_1516660319068_0005
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/hivedatabase/account/.hive-staging_hive_2018-01-22_15-53-56_163_3131943884667540247-1/-ext-10000
+Loading data to table hiveoriginal_sc.hive_account
+Table hiveoriginal_sc.hive_account stats: [numFiles=1, numRows=4, totalSize=138, rawDataSize=134]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 2.22 sec   HDFS Read: 3556 HDFS Write: 223 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 220 msec
+OK
+Time taken: 91.534 seconds
+hive> select * from hive_account;
+OK
+1	Small Company LLC	GBMOOUMWWBOJ
+2	Medium Company LLC	8PODJWD5AWZP
+3	Large Company LLC	8WWGP8SWA6PD
+4	Very Large Company LLC	1IFMNIZDAMXD
+Time taken: 0.168 seconds, Fetched: 4 row(s)
+hive> ADD JAR /home/cloudera/workspace/udf.jar;
+Added [/home/cloudera/workspace/udf.jar] to class path
+Added resources: [/home/cloudera/workspace/udf.jar]
+hive> CREATE TEMPORARY FUNCTION encod AS 'Maskemail';
+OK
+Time taken: 0.074 seconds
+hive> insert overwrite table hive_contact select account_id,contact_id,first_name,last_name,encodnum(phone),encod(email) from hive_contact;
+Query ID = cloudera_20180122155757_d0fdf842-9424-4eee-a9a3-5f7aca073ea5
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1516660319068_0006, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1516660319068_0006/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1516660319068_0006
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2018-01-22 15:58:12,881 Stage-1 map = 0%,  reduce = 0%
+2018-01-22 15:58:26,718 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.32 sec
+MapReduce Total cumulative CPU time: 2 seconds 320 msec
+Ended Job = job_1516660319068_0006
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/hivedatabase/contact/.hive-staging_hive_2018-01-22_15-57-59_527_3708570376035238669-1/-ext-10000
+Loading data to table hiveoriginal_sc.hive_contact
+Table hiveoriginal_sc.hive_contact stats: [numFiles=1, numRows=4, totalSize=220, rawDataSize=216]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 2.32 sec   HDFS Read: 3879 HDFS Write: 305 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 320 msec
+OK
+Time taken: 29.778 seconds
+hive> select * from hive_contact;
+OK
+11	1	John	Smith	W5S5TWNUJZHY	FB7DH7MGZN@null.dummy.com
+12	2	Bob	Smith	WUTYWIJSFBWZ	AMLPCCK8LG@null.dummy.com
+13	3	Mark	Taylor	LMVSRUO1CNEM	VUI3ESFUSJ@null.dummy.com
+14	4	Pat	Taylor	LIA7YZJ13ZIB	2PO8ZNKZQH@null.dummy.com
+Time taken: 0.061 seconds, Fetched: 4 row(s)
+hive> select * from hive_contact;
+OK
+11	1	John	Smith	W5S5TWNUJZHY	FB7DH7MGZN@null.dummy.com
+12	2	Bob	Smith	WUTYWIJSFBWZ	AMLPCCK8LG@null.dummy.com
+13	3	Mark	Taylor	LMVSRUO1CNEM	VUI3ESFUSJ@null.dummy.com
+14	4	Pat	Taylor	LIA7YZJ13ZIB	2PO8ZNKZQH@null.dummy.com
+Time taken: 0.283 seconds, Fetched: 4 row(s)
+hive> desc hive_contact;
+OK
+account_id          	int                 	                    
+contact_id          	int                 	                    
+first_name          	string              	                    
+last_name           	string              	                    
+phone               	string              	                    
+email               	string              	                    
+Time taken: 0.134 seconds, Fetched: 6 row(s)
+hive> desc account;
+FAILED: SemanticException [Error 10001]: Table not found account
+hive> desc hive_account;
+OK
+account_id          	int                 	                    
+account_name        	string              	                    
+account_phone       	string              	                    
+Time taken: 0.077 seconds, Fetched: 3 row(s)
+hive> select * from hive_account;
+OK
+1	Small Company LLC	GBMOOUMWWBOJ
+2	Medium Company LLC	8PODJWD5AWZP
+3	Large Company LLC	8WWGP8SWA6PD
+4	Very Large Company LLC	1IFMNIZDAMXD
+Time taken: 0.101 seconds, Fetched: 4 row(s)
+hive> create external table hive_contact(account_id int,contact_id int,first_name string,last_name string,phone string,email string)
+    > row format delimited
+    > fields terminated by '\t'
+    > location '/hivedatabase/contact/';
+FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. AlreadyExistsException(message:Table hive_contact already exists)
+hive> create external table hive_contact1(contact_id int,account_id int,first_name string,last_name string,phone string,email string)
+    > row format delimited
+    > fields terminated by '\t'
+    > location '/hivedatabase/contact/';
+OK
+Time taken: 0.189 seconds
+hive> insert overwrite table hive_contact1 select contact_id,account_id,first_name,last_name, encodnum(phone), encod(email) from hive_contact;
+Query ID = cloudera_20180122163737_219703d6-ef91-41c6-8828-2911a6007756
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1516660319068_0008, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1516660319068_0008/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1516660319068_0008
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2018-01-22 16:37:22,655 Stage-1 map = 0%,  reduce = 0%
+2018-01-22 16:37:32,563 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.8 sec
+MapReduce Total cumulative CPU time: 1 seconds 800 msec
+Ended Job = job_1516660319068_0008
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/hivedatabase/contact/.hive-staging_hive_2018-01-22_16-37-12_850_920848342320690786-1/-ext-10000
+Loading data to table hiveoriginal_sc.hive_contact1
+Table hiveoriginal_sc.hive_contact1 stats: [numFiles=1, numRows=4, totalSize=220, rawDataSize=216]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 1.8 sec   HDFS Read: 4264 HDFS Write: 306 SUCCESS
+Total MapReduce CPU Time Spent: 1 seconds 800 msec
+OK
+Time taken: 22.364 seconds
+hive> select * from hive_contact1;
+OK
+1	11	John	Smith	SJYRNLJ6OAXY	BS4BDWHM7A@null.dummy.com
+2	12	Bob	Smith	GJ97OE72LUUE	OLCL46BKHB@null.dummy.com
+3	13	Mark	Taylor	ESI3AZGZKXKZ	TLL7UMSBLJ@null.dummy.com
+4	14	Pat	Taylor	VWAQKEBJDWFS	IXEFDRPA6M@null.dummy.com
+Time taken: 0.052 seconds, Fetched: 4 row(s)
+hive> select * from hiveoriginal_sc.hive_contact1;
+OK
+1	11	John	Smith	SJYRNLJ6OAXY	BS4BDWHM7A@null.dummy.com
+2	12	Bob	Smith	GJ97OE72LUUE	OLCL46BKHB@null.dummy.com
+3	13	Mark	Taylor	ESI3AZGZKXKZ	TLL7UMSBLJ@null.dummy.com
+4	14	Pat	Taylor	VWAQKEBJDWFS	IXEFDRPA6M@null.dummy.com
+Time taken: 0.073 seconds, Fetched: 4 row(s)
+hive> describe hive_account;
+OK
+account_id          	int                 	                    
+account_name        	string              	                    
+account_phone       	string              	                    
+Time taken: 0.095 seconds, Fetched: 3 row(s)
+hive> describe hive_contact;
+OK
+account_id          	int                 	                    
+contact_id          	int                 	                    
+first_name          	string              	                    
+last_name           	string              	                    
+phone               	string              	                    
+email               	string              	                    
+Time taken: 0.139 seconds, Fetched: 6 row(s)
+hive> drop table hive_contact1;
+OK
+Time taken: 1.241 seconds
+hive> create external table hive_contact1(contact_id int,account_id int,Firstname string,Lastname string,phone string,email string)
+    > row format delimited
+    > fields terminated by '\t'
+    > location '/hivedatabase/contact/';
+OK
+Time taken: 0.061 seconds
+hive> insert overwrite table hive_contact1 select contact_id,account_id,first_name,last_name, encodnum(phone), encod(email) from hive_contact;
+Query ID = cloudera_20180122165050_7b78ca64-6591-42f6-9ef4-9b63e9342ff8
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1516660319068_0009, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1516660319068_0009/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1516660319068_0009
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2018-01-22 16:50:09,873 Stage-1 map = 0%,  reduce = 0%
+2018-01-22 16:50:18,713 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.65 sec
+MapReduce Total cumulative CPU time: 1 seconds 650 msec
+Ended Job = job_1516660319068_0009
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/hivedatabase/contact/.hive-staging_hive_2018-01-22_16-50-00_122_877717788368215571-1/-ext-10000
+Loading data to table hiveoriginal_sc.hive_contact1
+Table hiveoriginal_sc.hive_contact1 stats: [numFiles=1, numRows=4, totalSize=220, rawDataSize=216]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 1.65 sec   HDFS Read: 4350 HDFS Write: 306 SUCCESS
+Total MapReduce CPU Time Spent: 1 seconds 650 msec
+OK
+Time taken: 20.063 seconds
+hive> select * from hive_contact1;
+OK
+11	1	John	Smith	N7HY768YULFF	3FLDJ77PU9@null.dummy.com
+12	2	Bob	Smith	ZQZLW8PV2QPD	CWVL2DQRRL@null.dummy.com
+13	3	Mark	Taylor	VDPYFWDKEW8S	OSARDM91T4@null.dummy.com
+14	4	Pat	Taylor	COBLXEIHUQYA	KTU3WBHM1X@null.dummy.com
+Time taken: 0.066 seconds, Fetched: 4 row(s)
+hive> describe hive_contact1;
+OK
+contact_id          	int                 	                    
+account_id          	int                 	                    
+firstname           	string              	                    
+lastname            	string              	                    
+phone               	string              	                    
+email               	string              	                    
+Time taken: 0.069 seconds, Fetched: 6 row(s)
+hive> 
