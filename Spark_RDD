@@ -1,0 +1,207 @@
+[cloudera@quickstart ~]$ cd /usr/lib/spark
+[cloudera@quickstart spark]$ ./bin/spark-shell
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel).
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/zookeeper/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/flume-ng/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/parquet/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/avro/avro-tools-1.7.6-cdh5.12.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 1.6.0
+      /_/
+
+Using Scala version 2.10.5 (Java HotSpot(TM) 64-Bit Server VM, Java 1.7.0_67)
+Type in expressions to have them evaluated.
+Type :help for more information.
+18/02/05 20:20:43 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Spark context available as sc (master = local[*], app id = local-1517890855635).
+18/02/05 20:21:06 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+SQL context available as sqlContext.
+
+scala> val x = sc.parallelize(List("spark","rdd","example","sample",example"),3) 
+<console>:1: error: unclosed string literal
+       val x = sc.parallelize(List("spark","rdd","example","sample",example"),3)
+                                                                            ^
+
+scala> val x = sc.parallelize(List("spark","rdd","example","sample",example"), 3)
+<console>:1: error: unclosed string literal
+       val x = sc.parallelize(List("spark","rdd","example","sample",example"), 3)
+                                                                            ^
+
+scala> val x = sc.parallelize(List("spark","rdd","example","sample","example"), 3)
+x: org.apache.spark.rdd.RDD[String] = ParallelCollectionRDD[0] at parallelize at <console>:27
+
+scala> val y =nx.map(x=>(x,1))
+<console>:29: error: not found: value nx
+         val y =nx.map(x=>(x,1))
+                ^
+
+scala> val y = x.map(x=>(x,1))
+y: org.apache.spark.rdd.RDD[(String, Int)] = MapPartitionsRDD[1] at map at <console>:29
+
+scala> y.collect
+res0: Array[(String, Int)] = Array((spark,1), (rdd,1), (example,1), (sample,1), (example,1))
+
+scala> val y = x.map((_,1))
+y: org.apache.spark.rdd.RDD[(String, Int)] = MapPartitionsRDD[2] at map at <console>:29
+
+scala> y.collect
+res1: Array[(String, Int)] = Array((spark,1), (rdd,1), (example,1), (sample,1), (example,1))
+
+scala> val y =x.map(x =>(x,x.length))
+y: org.apache.spark.rdd.RDD[(String, Int)] = MapPartitionsRDD[3] at map at <console>:29
+
+scala> y.collect
+res2: Array[(String, Int)] = Array((spark,5), (rdd,3), (example,7), (sample,6), (example,7))
+
+scala> val x = sc.parallelize(List("Lopa is a girl,"amar is a boy"),2)
+<console>:1: error: unclosed string literal
+       val x = sc.parallelize(List("Lopa is a girl,"amar is a boy"),2)
+                                                                  ^
+
+scala> val x = sc.parallelize(List("Lopa is a girl","amar is a boy"),2)
+x: org.apache.spark.rdd.RDD[String] = ParallelCollectionRDD[4] at parallelize at <console>:27
+
+scala> val y = x.map(x => x.split("")) //split("")
+y: org.apache.spark.rdd.RDD[Array[String]] = MapPartitionsRDD[5] at map at <console>:29
+
+scala> y.collect
+res3: Array[Array[String]] = Array(Array("", L, o, p, a, " ", i, s, " ", a, " ", g, i, r, l), Array("", a, m, a, r, " ", i, s, " ", a, " ", b, o, y))
+
+scala> val y = x.flatmap(x => x.split("")) //split("")
+<console>:29: error: value flatmap is not a member of org.apache.spark.rdd.RDD[String]
+         val y = x.flatmap(x => x.split("")) //split("")
+                   ^
+
+scala> val y = x.flatMap(x => x.split("")) //split("")
+y: org.apache.spark.rdd.RDD[String] = MapPartitionsRDD[6] at flatMap at <console>:29
+
+scala> y.collect
+res4: Array[String] = Array("", L, o, p, a, " ", i, s, " ", a, " ", g, i, r, l, "", a, m, a, r, " ", i, s, " ", a, " ", b, o, y)
+
+scala> val y = x.flatMap(x => x.split(" ")) //split("")
+y: org.apache.spark.rdd.RDD[String] = MapPartitionsRDD[7] at flatMap at <console>:29
+
+scala> y.collect
+res5: Array[String] = Array(Lopa, is, a, girl, amar, is, a, boy)                
+
+scala> val y = x.map(x => x.split(" ")) //split("")
+y: org.apache.spark.rdd.RDD[Array[String]] = MapPartitionsRDD[8] at map at <console>:29
+
+scala> y.collect
+res6: Array[Array[String]] = Array(Array(Lopa, is, a, girl), Array(amar, is, a, boy))
+
+scala> val y = x.flatMap(x => x.split(" ")) //split("")
+y: org.apache.spark.rdd.RDD[String] = MapPartitionsRDD[9] at flatMap at <console>:29
+
+scala> val x = sc.parallelize(Array(("a",1),("b",1),("a",1),("a",1),("b",1),("b",1),("b",1),("b",1)),3);
+x: org.apache.spark.rdd.RDD[(String, Int)] = ParallelCollectionRDD[10] at parallelize at <console>:27
+
+scala> val yy = x.reduceByKey((accum,n) => (accume+n))
+<console>:29: error: not found: value accume
+         val yy = x.reduceByKey((accum,n) => (accume+n))
+                                              ^
+
+scala> val yy = x.reduceByKey((accum,n) => (accum + n))
+yy: org.apache.spark.rdd.RDD[(String, Int)] = ShuffledRDD[11] at reduceByKey at <console>:29
+
+scala> yy.collrvy
+<console>:32: error: value collrvy is not a member of org.apache.spark.rdd.RDD[(String, Int)]
+              yy.collrvy
+                 ^
+
+scala> yy.collect
+res8: Array[(String, Int)] = Array((a,3), (b,5))
+
+scala> val y = x.reduceByKey(_+_)
+y: org.apache.spark.rdd.RDD[(String, Int)] = ShuffledRDD[12] at reduceByKey at <console>:29
+
+scala> y.collect
+res9: Array[(String, Int)] = Array((a,3), (b,5))
+
+scala> val x = sc.parallelize(1 to 10,2)
+x: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[13] at parallelize at <console>:27
+
+scala> val y = x.filter(e=> e%2 ==0)
+y: org.apache.spark.rdd.RDD[Int] = MapPartitionsRDD[14] at filter at <console>:29
+
+scala> y.collect
+res10: Array[Int] = Array(2, 4, 6, 8, 10)
+
+scala> val y = x.filter(e=> e%2 <>0)
+<console>:29: error: value <> is not a member of Int
+         val y = x.filter(e=> e%2 <>0)
+                                  ^
+
+scala> val y = x.filter(e=> e%2 !=0)
+y: org.apache.spark.rdd.RDD[Int] = MapPartitionsRDD[15] at filter at <console>:29
+
+scala> y.collect
+res11: Array[Int] = Array(1, 3, 5, 7, 9)
+
+scala> val y = x.filter(_%2 ==0)
+y: org.apache.spark.rdd.RDD[Int] = MapPartitionsRDD[16] at filter at <console>:29
+
+scala> y.collect
+res12: Array[Int] = Array(2, 4, 6, 8, 10)
+
+scala> var x = sc.parallelize(Array("Lopa","Kol","Abs","Amar","Ass","Lotus","Jabm",Jamie"),2)
+<console>:1: error: unclosed string literal
+       var x = sc.parallelize(Array("Lopa","Kol","Abs","Amar","Ass","Lotus","Jabm",Jamie"),2)
+                                                                                         ^
+
+scala> var x = sc.parallelize(Array("Lopa","Kol","Abs","Amar","Ass","Lotus","Jabm","Jamie"),2)
+x: org.apache.spark.rdd.RDD[String] = ParallelCollectionRDD[17] at parallelize at <console>:27
+
+scala> var y = x.groupBy(_.char(0))
+<console>:29: error: value char is not a member of String
+         var y = x.groupBy(_.char(0))
+                             ^
+
+scala> var y = x.groupBy(_.charAt(0))
+y: org.apache.spark.rdd.RDD[(Char, Iterable[String])] = ShuffledRDD[19] at groupBy at <console>:29
+
+scala> y.collect
+res13: Array[(Char, Iterable[String])] = Array((L,CompactBuffer(Lopa, Lotus)), (J,CompactBuffer(Jabm, Jamie)), (A,CompactBuffer(Abs, Amar, Ass)), (K,CompactBuffer(Kol)))
+
+scala> var num = Array(5,10,15,20,25)
+num: Array[Int] = Array(5, 10, 15, 20, 25)
+
+scala> val y = num.map(_*_)
+<console>:27: error: wrong number of parameters; expected = 1
+         val y = num.map(_*_)
+                          ^
+
+scala> val y = num.map(num => num*num)
+y: Array[Int] = Array(25, 100, 225, 400, 625)
+
+scala> val y = num.filter(e
+     | => e!=15)
+y: Array[Int] = Array(5, 10, 20, 25)
+
+scala> val y = num.filter(_ != 15)
+y: Array[Int] = Array(5, 10, 20, 25)
+
+scala> val y = num.map(_*)
+<console>:27: error: ambiguous reference to overloaded definition,
+both method * in class Int of type (x: Char)Int
+and  method * in class Int of type (x: Short)Int
+match expected type ?
+         val y = num.map(_*)
+                          ^
+
+scala> val y = num.map(_*_)
+<console>:27: error: wrong number of parameters; expected = 1
+         val y = num.map(_*_)
+                          ^
+
+scala> val y = num.map(num => num*num)
+y: Array[Int] = Array(25, 100, 225, 400, 625)
+
+scala> [cloudera@quickstart spark]$ 
