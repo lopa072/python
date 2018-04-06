@@ -1,0 +1,16 @@
+#!/bin/python3
+
+import sys
+'''
+This is for array , join and slice function
+'''
+
+n = int(input().strip())
+arr = [int(arr_temp) for arr_temp in input().strip().split(' ')]
+
+a =  arr[::-1]
+
+result = " ".join(str(x) for x in a)
+print(result)
+
+#print " ".join(str(x) for x in a)
