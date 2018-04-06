@@ -1,0 +1,17 @@
+import sys
+
+n = int(input())          #n is the number of items you want to enter
+dict1 ={}
+arr = []
+for i in range(n):        
+    text = input().split()     #split the input text based on space & store in the list 'text'
+    dict1[text[0]] = text[1]       #assign the 1st item to key and 2nd item to value of the dictionary
+
+#list1 =['Sam','Das','Ram']
+
+for key,value in dict1.items():
+    name = input()
+    if name == key:
+        print("{}={}".format(name, dict1[name]))
+    else:
+        print('Not found')
