@@ -1,0 +1,34 @@
+import sys
+
+
+def separate_string(sentence):
+    l = list(sentence)
+    list_even = list()
+    list_odd = list()
+    index = 0
+
+    for letter in l:
+        if index % 2 != 0:
+            list_even.append(letter)
+        else:
+            list_odd.append(letter)
+        index += 1
+
+    string_even = "".join(list_even)
+    string_odd = "".join(list_odd)
+
+    print(string_odd,' ',string_even)
+ 
+
+
+
+def string_input(T):
+    if 0<= T <= 10:
+        for i in range(0,T):
+            S1 = input()
+            separate_string(S1)
+
+            
+    else:
+        return
+string_input(2)
