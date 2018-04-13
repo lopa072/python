@@ -1,0 +1,21 @@
+class Difference:
+    def __init__(self, a):
+        self.__elements = a
+        
+	# Add your code here
+        self.maximumDifference = 0
+    def computeDifference(self):
+        arr2 = sorted(a, key=int)
+        a1_max = len(arr2)
+        difference = abs(arr2[a1_max - 1]- arr2[0])
+        self.maximumDifference = max(difference, self.maximumDifference)        
+        
+   # End of Difference class
+
+  _ = input()
+  a = [int(e) for e in input().split(' ')]
+
+  d = Difference(a)
+  d.computeDifference()
+
+  print(d.maximumDifference)     
